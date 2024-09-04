@@ -35,3 +35,37 @@ An admin has elevated privileges and can access or modify information for all us
 - **Get any task's information**: Retrieve details of any specific task.
 - **Update any task's information**: Modify details of any task.
 - **Delete any task**: Remove any task from the system.
+
+# Sample setup
+- Create a virtual environment module in your project.
+```bash
+
+# Generate virtual environment
+# On Windows
+python -m venv venv
+
+# On macOS and Linux
+python3 -m venv venv
+
+# Activate virtual environment
+venv\Scripts\activate
+
+# Install depdendency packages
+pip install -r requirements.txt
+```
+
+- Configure `.env` file by creating a copy from `.env.sample`
+```
+# Example
+ASYNC_DB_ENGINE=postgresql+asyncpg
+DB_ENGINE=postgresql
+DB_NAME=fastapi_db
+DB_USERNAME=tuan
+DB_PASSWORD=tuan
+DB_HOST=localhost
+DB_PORT=5433
+ADMIN_DEFAULT_PASSWORD=tuan
+JWT_SECRET=2f8d64a98ff91836a2a78884573c402a627d4c120eb9c3213e5d51379bfb46c4
+JWT_ALGORITHM=HS256
+
+```
