@@ -54,7 +54,7 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-- Configure `.env` file by creating a copy from `.env.sample`
+- Configure `.env` file by creating a copy from `.env.sample`. (My port is `5433` so i set `5433` as an example, you can set the port to `5432` as default port for postgres)
 ```bash
 # Example
 ASYNC_DB_ENGINE=postgresql+asyncpg
@@ -67,6 +67,12 @@ DB_PORT=5433
 ADMIN_DEFAULT_PASSWORD=tuan
 JWT_SECRET=2f8d64a98ff91836a2a78884573c402a627d4c120eb9c3213e5d51379bfb46c4
 JWT_ALGORITHM=HS256
+
+# Setup a postgres instance at port 5432
+- This can be done through a local installment of postgreSQL or a docker container.
+```bash
+docker run -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=<your-preferred-one> -d postgres:<your-preferred-version>
+```
 
 ```
 - At `app` directory, run `alembic` migration command. Please make sure your postgres DB is ready and accessible.
