@@ -90,4 +90,7 @@ uvicorn main:app --reload
 ```
 
 - Access `http://127.0.0.1:8000/docs` to test the APIs on Swagger-UI:
+<img width="931" alt="Screenshot 2024-09-04 093411" src="https://github.com/user-attachments/assets/e37e07e8-7bfe-4348-982e-ab650679e9e8">
+<img width="887" alt="Screenshot 2024-09-04 093445" src="https://github.com/user-attachments/assets/665945cd-d57b-4581-b2c7-857b507376fe">
+
 
