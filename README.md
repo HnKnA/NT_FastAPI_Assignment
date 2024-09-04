@@ -88,3 +88,6 @@ alembic revision -m <comment>
 ```bash
 uvicorn main:app --reload
 ```
+
+- Access `http://127.0.0.1:8000/docs` to test the APIs on Swagger-UI:
+
