@@ -55,7 +55,7 @@ pip install -r requirements.txt
 ```
 
 - Configure `.env` file by creating a copy from `.env.sample`
-```
+```bash
 # Example
 ASYNC_DB_ENGINE=postgresql+asyncpg
 DB_ENGINE=postgresql
@@ -68,4 +68,23 @@ ADMIN_DEFAULT_PASSWORD=tuan
 JWT_SECRET=2f8d64a98ff91836a2a78884573c402a627d4c120eb9c3213e5d51379bfb46c4
 JWT_ALGORITHM=HS256
 
+```
+- At `app` directory, run `alembic` migration command. Please make sure your postgres DB is ready and accessible.
+```bash
+# Migrate to latest revison
+alembic upgrade head
+
+# Dowgragde to specific revision
+alembic downgrade <revision_number>
+
+# Downgrade to base (revert all revisions)
+alembic downgrade base
+
+# Create new revision
+alembic revision -m <comment>
+```
+
+- Run `uvicorn` web server from `app` directory (`reload` mode is for development purposes)
+```bash
+uvicorn main:app --reload
 ```
